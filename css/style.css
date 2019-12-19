@@ -1,0 +1,337 @@
+@font-face {
+   font-family: geosans;
+   src: url(../fonts/Geosans.ttf);
+}
+
+
+/*Dit gaat over de titel die boven aan de pagina staat*/ 
+.title{
+  width: 98,8%;
+  text-align: center;
+  border-radius: 8px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  padding: 0px 10px 10px 10px;
+  background-color: red;
+}
+.title h1{
+  position:  relative;
+  top: 10px;
+  font-family: geosans;
+  color: white;
+}
+
+
+/*Dit gaat over de afmetingen van de afbeeldingen*/
+.img{
+  width: 150px;
+  margin-top: 20px;
+}
+
+.imgbig{
+  width: 200px;
+  margin-top: 20px;
+}
+
+.imgbigger{
+  width: 250px;
+  margin-top: 20px;
+}
+
+/*Dit is de achtergrond van de 'kaart' waar de tijdlijn opstaat*/
+
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: #dddddd;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+
+}
+
+/*Dit is de lijn die in het midden loopt*/
+.flex-container::after{
+   content: '';
+    position: absolute;
+    width: 5px;
+    background-color: red;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    height: 100%;
+    margin-left: -3px;
+}
+
+/*Dit is de achtergrond waar de teksten van de onderwerpen*/
+.container  {
+  background-color: white;
+  width: 40%;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+  border-radius: 8px;
+  font-family: geosans;
+  padding: 0px 10px 10px 10px;
+  position: relative;
+  box-shadow: 5px 5px 3px #999999;
+}
+
+/*Dit gaat over de bolletjes*/
+.container::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    right: -21.1%;
+    background-color: red;
+    border: 4px solid red;
+    top: 0px;
+    border-radius: 50%;
+    z-index: 1;
+
+}
+
+
+.right::after {
+    left: -21.1%;
+}
+
+h4, p{
+  margin: 0px;
+  padding: 0px;
+  line-height: 1.5;
+}
+.content h4{
+   color: white;
+
+}
+.content p{
+  font-size: 22px;
+  padding: 10px 10px 0px 10px;
+
+}
+.content > div{
+  padding: 10px 0px 10px 0px;
+  width: 100% ;
+  background-color: red;
+  border-radius: 8px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  padding: 0px 10px 10px 10px;
+  position: relative;
+  left: -10px;
+}
+
+.left{
+  align-self: flex-start;
+}
+.left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 0px;
+    width: 0;
+    z-index: 1;
+    right: -25px;
+    border: medium solid red;
+    border-width: 28px 0px 28px 28px;
+    border-color: transparent transparent transparent red;
+}
+
+
+.right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 0px;
+    width: 0;
+    z-index: 1;
+    left: -25px;
+    border: medium solid red;
+    border-width: 28px 28px 28px 0;
+    border-color: transparent red transparent transparent;
+}
+
+.right{
+  margin-left: auto;
+}
+
+
+/*Dit is voor een scherm met de grootte 2560 x 2460 laptop klein*/
+@media screen and (min-width: 2559px){
+   .container::after {
+      right: -9.3%;
+      top: 16.4px;
+    }
+    .right::after {
+    left: -9.3%;
+    top: 16.4px;
+   }
+  
+    .container{
+    width: 45%;
+    }
+  
+    .img{
+    float: left;
+  
+     }
+
+    .imgbig{
+    float: left;
+    }
+
+    .imgbigger{
+    float: left;
+    }
+}
+
+/*Dit is voor een scherm met de grootte 1024 x 636 laptop klein*/
+@media screen and (max-width: 1439px){
+   .container::after {
+      right: -19.47%;
+      top: 20px;
+    }
+    .right::after {
+    left: -19.47%;
+    top: 16.4px;
+  }
+  .container{
+    width: 40%;
+
+  }
+}
+
+/*Dit is voor een scherm met de grootte 1024 x 636 laptop klein*/
+@media screen and (max-width: 1024px){
+   .container::after {
+      right: -19.47%;
+      top: 16.4px;
+    }
+    .right::after {
+    left: -19.47%;
+    top: 16.4px;
+  }
+  .container{
+    width: 40%;
+
+  }
+}
+
+/*Dit is voor een scherm met de grootte 768 x 636 tablet*/
+@media screen and (max-width: 768px){
+  h4{
+    font-size: 25px;
+  }
+
+  p{
+    font-size:18px;
+  }
+
+ .flex-container::after {
+  left: 10PX;
+  }
+ 
+  .container::before {
+    top: 1px;
+    left: -20px;
+    border: medium solid red;
+    border-width: 23px 23px 23px 0;
+    border-color: transparent red transparent transparent;
+  }
+
+  .left::after, .right::after {
+    left: -6.8%;
+    width: 10px;
+    height: 10px;
+    top: 20px;
+  }
+  
+  .left{
+    margin: 0px;
+  }
+  .right {
+    left: 0% !important;
+    margin: 0px;  
+
+  }
+  .container:nth-child(1){
+    margin-top: 20px;
+  }
+
+  .container {
+    width: 85%;
+    margin: auto auto;
+    margin-bottom: 20px;
+  }
+
+
+
+}
+
+
+@media screen and (min-width: 500px) and (max-width: 768px){
+  .img{
+    float: left;
+  }
+
+  .imgbig{
+    float: left;
+  }
+
+  .imgbigger{
+    float:left;
+  }
+
+}
+
+/*Dit is voor een scherm groote van 425 x 636 - telefoonscherm groot */
+@media screen and (max-width: 426px) {
+  h4{
+    font-size: 20px;
+  }
+
+  p{
+    font-size:15px;
+  }
+
+  .flex-container::after {
+    left: 10PX;
+  }
+ 
+  .container::before {
+    left: -20px;
+    border: medium solid red;
+    border-width: 28px 28px 28px 0;
+    border-color: transparent red transparent transparent;
+  }
+
+  .left::after, .right::after {
+    left: -49px;
+    width: 10px;
+    height: 10px;
+    top: 20px;
+  }
+  
+  .left{
+    margin: 0px;
+  }
+  .right {
+    left: 0% !important;
+    margin: 0px;  
+
+  }
+  .container:nth-child(1){
+    margin-top: 20px;
+  }
+
+  .container {
+    width: 70%;
+    margin: auto auto;
+    margin-bottom: 20px;
+  }
+}
+
+
